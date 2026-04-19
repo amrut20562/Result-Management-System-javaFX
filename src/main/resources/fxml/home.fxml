@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" style="-fx-background-color: #f5f5f5;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: #f5f5f5;">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <!-- Header -->
+            <VBox alignment="CENTER" styleClass="header-box">
+                <Label styleClass="header-title" text="🎓 B.E Result Management System" />
+                <Label styleClass="header-subtitle" text="Artificial Intelligence &amp; Data Science 4th Semester" />
+            </VBox>
+
+            <!-- Navigation Menu -->
+            <HBox alignment="CENTER" spacing="15.0" styleClass="menu-bar">
+                <Button onAction="#goToViewStudents" styleClass="menu-btn" text="👨‍🎓 Students" />
+                <Button onAction="#goToSearch" styleClass="menu-btn" text="🔍 Search" />
+                <Button onAction="#goToAddStudent" styleClass="menu-btn" text="➕ Add Student" />
+                <Button onAction="#goToEnterMarks" styleClass="menu-btn" text="📝 Enter Marks" />
+                <Button onAction="#goToAnalysis" styleClass="menu-btn" text="📊 Analysis" />
+            </HBox>
+
+            <!-- Statistics Grid -->
+            <Label styleClass="section-title" text="📈 Overall Statistics" />
+            <GridPane hgap="20.0" vgap="20.0" alignment="CENTER">
+                <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label styleClass="stat-title" text="👨‍🎓 Total Students" />
+                    <Label fx:id="totalStudentsLabel" styleClass="stat-value" text="0" />
+                </VBox>
+                <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label styleClass="stat-title" text="📝 Total Marks Entries" />
+                    <Label fx:id="totalMarksLabel" styleClass="stat-value" text="0" />
+                </VBox>
+                <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label styleClass="stat-title" text="📊 Average Marks" />
+                    <Label fx:id="avgMarksLabel" styleClass="stat-value" text="0.0" />
+                </VBox>
+                <VBox alignment="CENTER" styleClass="stat-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                    <Label styleClass="stat-title" text="🏆 Pass Percentage" />
+                    <Label fx:id="passPercentageLabel" styleClass="stat-value" text="0.0%" />
+                </VBox>
+            </GridPane>
+
+            <!-- Quick Links / Dashboard actions -->
+            <Label styleClass="section-title" text="🚀 Quick Links" />
+            <HBox alignment="CENTER" spacing="20.0">
+                <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #f093fb, #f5576c);" styleClass="link-card">
+                    <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="👨‍🎓 View Students" />
+                    <Button onAction="#goToViewStudents" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand; -fx-underline: true;" text="→ Go" />
+                </VBox>
+                
+                <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);" styleClass="link-card">
+                    <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="📝 Enter Marks" />
+                    <Button onAction="#goToEnterMarks" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand; -fx-underline: true;" text="→ Go" />
+                </VBox>
+                
+                <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #43e97b, #38f9d7);" styleClass="link-card">
+                    <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="🔍 Search Students" />
+                    <Button onAction="#goToSearch" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand; -fx-underline: true;" text="→ Go" />
+                </VBox>
+
+                <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #fa709a, #fee140);" styleClass="link-card">
+                    <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="📊 Data Analysis" />
+                    <Button onAction="#goToAnalysis" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand; -fx-underline: true;" text="→ Go" />
+                </VBox>
+            </HBox>
+
+        </VBox>
+    </content>
+</ScrollPane>

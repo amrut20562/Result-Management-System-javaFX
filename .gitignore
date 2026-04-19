@@ -1,0 +1,11 @@
+bin/
+lib/javafx-sdk-26/
+*.class
+*.pdf
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.iws
+*.iml
+*.ipr
